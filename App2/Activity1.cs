@@ -19,7 +19,22 @@ namespace App2
         {
             base.OnCreate(savedInstanceState);
 
-            // Create your application here
-        }
+            // Set our view from the "main" layout resource
+            SetContentView(Resource.Layout.Activity1);
+
+            // Get our button from the layout resource,
+            // and attach an event to it
+            Button button = FindViewById<Button>(Resource.Id.button1);
+
+            button.Click += delegate
+            {
+
+                var activity2 = new Intent(this, typeof(Activity2));
+                StartActivity(activity2);
+
+            };
+
+
+         }
     }
 }
